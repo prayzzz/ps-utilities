@@ -7,7 +7,7 @@ properties {
     Assert ($artifact -ne $null) '$artifact should not be null'
 
     # Config
-    $configFile = Get-Value-Or-Default $configFile ".\deploy.json"
+    $configFile = Get-Value-Or-Default $configFile "./ops/deploy.json"
     $config = (Get-Content $configFile) | ConvertFrom-Json
 
     $appName = $config.appName
