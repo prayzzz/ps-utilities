@@ -1,3 +1,5 @@
+# /mnt/usb1/teamcity/artifacts/FlatMate/Publish Tag/466/flatmate-2017.05.13.1312.zip
+
 properties {
     Import-Module psake-contrib/teamcity.psm1
     $ProgressPreference = "SilentlyContinue"
