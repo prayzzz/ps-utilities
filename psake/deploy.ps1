@@ -1,5 +1,3 @@
-# /mnt/usb1/teamcity/artifacts/FlatMate/Publish Tag/466/flatmate-2017.05.13.1312.zip
-
 properties {
     Import-Module psake-contrib/teamcity.psm1
     $ProgressPreference = "SilentlyContinue"
@@ -8,14 +6,23 @@ properties {
     $artifact = Get-Value-Or-Default $artifact $null
     Assert ($artifact -ne $null) '$artifact should not be null'
 
-    # Config
+    # Config    
     $configFile = Get-Value-Or-Default $configFile "./ops/deploy.json"
-    $config = (Get-Content $configFile) | ConvertFrom-Json
-
-    $appName = $config.appName
-    $appProcess = $config.appProcess
-    $deployParentDirectoryPath = $config.deployParentDirectoryPath 
-    $startupFile = $config.startupFile
+    
+    if (Test-path $configFile) {
+        $config = (Get-Content $configFile) | ConvertFrom-Json  
+        
+        $appName = $config.appName
+        $appProcess = $config.appProcess
+        $deployParentDirectoryPath = $config.deployParentDirectoryPath 
+        $startupFile = $config.startupFile      
+    }
+    else {
+        $appName = Get-Value-Or-Default $appName $null
+        $appProcess = Get-Value-Or-Default $appProcess $null
+        $deployParentDirectoryPath = Get-Value-Or-Default $deployParentDirectoryPath $null
+        $startupFile = Get-Value-Or-Default $startupFile $null
+    }
 
     Assert ($appName -ne $null) '$appName should not be null'
     Assert ($appProcess -ne $null) '$appProcess should not be null'
