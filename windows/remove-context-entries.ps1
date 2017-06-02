@@ -10,14 +10,15 @@ function Remove-Registry-Entry ($path) {
 
 Write-Host "####"
 Write-Host "### Remove Context Entries Script"
+Write-Host "### Execute this script as Administrator"
 Write-Host "####"
 Write-Host
 
 $drives = Get-PSDrive -PSProvider Registry
-$hkcrfound = False
+$hkcrfound = $false
 foreach ($drive in $drives) {
     if ($drive.Name -eq "HKCR") {
-        $hkcrfound = True
+        $hkcrfound = $true
     }
 }
 
