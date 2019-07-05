@@ -33,20 +33,14 @@ Write-Host
 
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\background\shell\git_shell"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\background\shell\git_gui"
-Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\Background\OpenWithMobaXterm"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\Background\shell\AnyCode"
 
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\shell\git_shell"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\shell\git_gui"
-Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\shell\OpenWithMobaXterm"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\shell\PlayWithVLC"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\shell\AddToPlaylistVLC"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Directory\shell\AnyCode"
 
-Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Drive\shell\OpenWithMobaXterm"
 Remove-Registry-Entry "Registry::HKEY_CLASSES_ROOT\Applications\vlc.exe\shell\Open"
-
-Remove-Registry-Entry-By-Name "Registry::HKEY_CLASSES_ROOT\CLSID\" "shell\Open CCleaner..."
-Remove-Registry-Entry-By-Name "Registry::HKEY_CLASSES_ROOT\CLSID\" "shell\Run CCleaner"
 
 Write-Host
